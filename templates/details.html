@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block title %}MLib - {{movie.title}}{% endblock %}
+
+{% block content %}    
+        <div class="movie-details-container">
+
+            <div class="back-link">
+                <a href="{{url_for('index')}}">&larr; Back to List</a>
+            </div>
+
+            <div class="movie-details-body">
+            
+            <div class="movie-poster">
+                <img src="https://placehold.co/380x570" alt="Poster for {{movie.title}}">
+            </div>
+
+            <div class="review">
+                <h1 class="movie-title"> {{movie.title}} </h1>
+                
+                <div class="movie-section">
+                    <p><strong>Watched on:</strong> {{movie.watched_date}} </p>
+                </div>
+
+                <div class="movie-section rating-details">
+                    <p><strong>Rating:</strong></p>
+                    <div class="rating">
+                        {% for i in range(5) %}
+                            {% if (i+1) <= (movie.stars|int) %}
+                                <span>★</span>
+                            {% else %}
+                                <span class="star-empty">★</span>
+                            {% endif %}
+                        {% endfor %}                    </div>
+                </div>
+
+                <div class="movie-section">
+                    <p class="r-title"><strong>Review:</strong><br>
+                        {{movie.review}}
+                </div>
+            </div>
+            </div>
+        </div>
+{% endblock %}

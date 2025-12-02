@@ -1,26 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'layout.html' %}
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MLib - Add New Review</title>
-        <link rel="stylesheet" href="../css/styles.css">
-    </head>
+{% block title %}MLib - {{movie.title}}{% endblock %}
 
-    <body>
-        <header>
-            <div>
-                <nav>
-                    <a href="../index.html">
-                        <img src="../assets/mlib-icon.svg" alt="MLib Logo Icon" height="32">
-                        <span>MLib</span>
-                    </a>
-                </nav>
-            </div>
-        </header>
-
-        <main>
+{% block content %}   
             <div class="form-page-container">
                 <h2>New Review</h2>
 
@@ -67,11 +49,4 @@
                 <button type="submit" class="submit-button">Add</button>
                 </div>
             </div>
-        </main>
-
-        <footer>
-            <p>&copy; 2025 MLib &ndash; My Movie Library</p>
-        </footer>
-    </body>
-
-</html>
+{% endblock %}
